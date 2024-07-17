@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Resume</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <style>
+        /* General Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    background-color: #283593;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+header p {
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+section {
+    background-color: white;
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+    font-size: 1.8em;
+    color: #283593;
+    margin-bottom: 10px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+section h2::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #283593;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.contact-info p, 
+.education p,
+.experience p,
+.skills p {
+    margin: 10px 0;
+}
+
+.job ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.job ul li {
+    background: url('https://img.icons8.com/ios-filled/50/000000/dot-01.png') no-repeat left center;
+    background-size: 10px;
+    padding-left: 20px;
+    margin-bottom: 10px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #283593;
+    color: white;
+}
+
+a {
+    color: #283593;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.horizontal-line {
+    border-top: 1px solid #ddd;
+    margin: 2em 0;
+}
+
+.text-divider {
+    text-align: center;
+    margin: 2em 0;
+    position: relative;
+}
+
+.text-divider span {
+    background-color: white;
+    padding: 0 1em;
+    position: relative;
+    z-index: 1;
+    font-weight: bold;
+    color: #283593;
+}
+
+.text-divider::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: #ddd;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    z-index: 0;
+}
+
+    </style>
+    <header>
+        <img src="download.png" alt="head">
+        <h1>Deepan Sakkaravarthi</h1>
+        <p>Fullstack Developer</p>
+    </header>
+    
+    <section id="contact">
+        <h2>Contact Information</h2>
+        <p>Email: sakkaravarthideepan122@gmail.com</p>
+        <p>Phone: 9940779101</p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/deepansakkaravarthi/?originalSubdomain=in">linkedin.com/in/Deepan Sakkaravarthi</a></p>
+    </section>
+    
+    <section id="education">
+        <h2>Education</h2>
+        <h3>Kamaraj college of engineering and Technology</h3>
+        <p>Bachelor of Computer science and engineering</p>
+        <h4>Syed ammal matric boys hr sec school</h4>
+        <p>HSC</p>
+        <h4>Syed ammal matric boys hr sec school</h4>
+        <p>SSLC</p>
+    </section>
+    
+    <section id="experience">
+        <h2>Professional Experience</h2>
+        <div class="job">
+            <h3>Software Developer</h3>
+            <p>Example Company, 2021-Present</p>
+            <ul>
+                <li>Developed web applications using HTML, CSS, and JavaScript</li>
+                <li>Collaborated with cross-functional teams to define project requirements</li>
+                <li>Maintained and improved existing codebases</li>
+            </ul>
+        </div>
+        <div class="job">
+            <h3>Intern Developer</h3>
+            <p>Another Company, Summer 2019</p>
+            <ul>
+                <li>Assisted in developing and testing software features</li>
+                <li>Participated in code reviews and team meetings</li>
+            </ul>
+        </div>
+    </section>
+    
+    <section id="skills">
+        <h2>Skills</h2>
+        <ul>
+            <li>Programming Languages: JavaScript, Python, Java</li>
+            <li>Web Development: HTML, CSS, Django</li>
+            <li>Tools: figma, Tableau, Ms office</li>
+        </ul>
+    </section>
+    
+    <footer>
+        <p>© 2024 Deepan Sakkaravarthi. All rights reserved.</p>
+    </footer>
+</body>
+</html>

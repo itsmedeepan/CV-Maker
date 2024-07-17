@@ -1,0 +1,2 @@
+core\templates\core\sample.txt
+D:\Hell\DJango-CV-Maker-main_5\DJango-CV-Maker-main\core\templates\core\create_cv_script.html

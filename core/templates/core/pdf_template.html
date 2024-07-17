@@ -1,0 +1,140 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/cv_template.css' %}">
+    <style>
+        body {
+            background-color: white; /* Set background to white */
+        }
+        .cv_header {
+            text-align: center; /* Center-align header */
+            font-size: 24px; /* Set font size for header */
+            margin-top: 20px; /* Add some top margin */
+        }
+        .table {
+            font-size: 20px; /* Set font size for biography and tables */
+            margin-bottom: 20px; /* Add some bottom margin */
+        }
+        .bio{
+            font-size: 35px;
+        }
+
+        table {
+            width: 80%; /* Make table width 100% */
+            border-collapse: collapse; /* Collapse borders */
+        }
+        th, td {
+            border: 1px solid black; /* Add border to table cells */
+            padding: 8px; /* Add padding to table cells */
+        }
+
+        .back{
+            height: 5vh;
+            position: relative;
+            left: 2vh;
+            top: 5vh;
+        }
+    </style>
+</head>
+<body>
+    <a href="{% url 'dashboard' %}"><img class = "back"src="{% static 'img/back.png' %}" alt=""></a>
+    <h1 class="cv_header">CURRICULUM VITAE(CV)</h1>
+    <div class="row">
+        {% if user_profile %}
+        {% for profile in user_profile %}
+        {% if profile.avator %}
+        <img src="{{ profile.avator.url }}" style="width: 15%; height: 15%; margin: 5px 5px 5px 5px;" alt="no image">
+        {% else %}
+        <img src="{% static 'img/avator.png' %}" style="width: 15%; height: 15%; margin: 5px 5px 5px 5px;" alt="no image">
+        {% endif %}
+        <div style="float: right; padding-right: 60%;">
+            <div class="basic-info">
+                <h1>{{ profile.fname}} {{ profile.mname}} {{ profile.lname}}</h1>
+                <p>{{ profile.occupation}}</p>
+                <p>{{ profile.country}} {{profile.region}}</p>
+                <p>{{ profile.gender}}</p>
+                <p>{{ profile.email}}, {{profile.phone}}</p>
+            </div>
+        </div>
+        {% endfor %}
+        {% endif %}
+    </div>
+    <hr class="divider_line">
+    {% if user_profile %}
+    {% for profile in user_profile %}
+    <h1>Biography</h1>
+    <p class="bio">{{ profile.bio }}<p>
+    {% endfor %}
+    {% endif %}
+    <br/>
+    <br/>
+    <br/>
+
+    <h1>My Skills</h1>
+    <table class="table" id="table_skill">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Level</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if user_skill %}
+            {% for skill in user_skill %}
+            <tr>
+                <td>{{ skill.s_name }}</td>
+                <td>{{ skill.s_level }}</td>
+            </tr>
+            {% endfor %}
+            {% endif %}
+        </tbody>
+    </table>
+    <h1>Education Background</h1>
+    <table class="table" id="table_skill">
+        <thead>
+            <tr>
+                <th>Institution</th>
+                <th>Year</th>
+                <th>Award</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if user_education %}
+            {% for educa in user_education %}
+            <tr>
+                <td>{{ educa.a_institution }}</td>
+                <td>{{ educa.a_year }}</td>
+                <td>{{ educa.a_award }}</td>
+            </tr>
+            {% endfor %}
+            {% endif %}
+        </tbody>
+    </table>
+    <h1>Referees</h1>
+    <table class="table" id="table_skill">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if user_referee %}
+            {% for referee in user_referee %}
+            <tr>
+                <td>{{ referee.r_name }}</td>
+                <td>{{ referee.r_email }}</td>
+            </tr>
+            {% endfor %}
+            {% endif %}
+        </tbody>
+    </table>
+    
+    <p></p>
+</body>
+</html>
